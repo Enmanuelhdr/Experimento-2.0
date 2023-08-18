@@ -1,16 +1,13 @@
-import express from "express";
-import { dirname, join } from 'path';
-import { fileURLToPath } from "url";\
-import ejs from 'ejs';
+const express = require("express");
+const path = require("path");
+const { fileURLToPath } = require("url");
 
 const app = express();
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-console.log(join(__dirname, 'views'))
-const currentUrl = window.location.href;
-console.log(currentUrl);
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+console.log(path.join(__dirname, 'views'))
 
-app.set('views', join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => res.render('index'));
