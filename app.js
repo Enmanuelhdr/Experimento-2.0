@@ -1,6 +1,7 @@
 import express from "express";
 import { dirname, join } from 'path';
-import { fileURLToPath } from "url";
+import { fileURLToPath } from "url";\
+import ejs from 'ejs';
 
 const app = express();
 
